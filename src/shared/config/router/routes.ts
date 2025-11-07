@@ -7,7 +7,13 @@ export const ROUTES = {
       page: "/auth/registration",
     },
   },
-  dashboard: {
+  users: {
+    page: "/users",
+  },
+  rules: {
     page: "/",
   },
+  schedule: {
+    page: "/schedule",
+  }
 };

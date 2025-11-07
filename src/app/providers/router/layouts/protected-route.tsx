@@ -1,16 +1,14 @@
-import { type ReactNode, useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Navigate, Outlet } from "react-router-dom";
 import { supabase } from "@/shared/lib/supabase/client";
 import { Loader } from "lucide-react";
 import { ROUTES } from "@/shared/config/router/routes";
 
 interface ProtectedRouteProps {
-    children: ReactNode;
     redirectIfAuthenticated?: boolean;
 }
 
 export const ProtectedRoute = ({
-    children,
     redirectIfAuthenticated = false,
 }: ProtectedRouteProps) => {
     const [loading, setLoading] = useState(true);
@@ -54,5 +52,5 @@ export const ProtectedRoute = ({
         return <Navigate to={ROUTES.auth.login.page} replace />;
     }
 
-    return <>{children}</>;
+    return <Outlet />;
 };
