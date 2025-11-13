@@ -24,6 +24,8 @@ export function UsersPage() {
   const isError = usersQuery.isError;
   const isLoading = usersQuery.isLoading;
 
+  const paginatedUsers = [...users].slice(0,9);
+
   return (
     <div className="p-8">
       <div className="mb-6">
@@ -51,7 +53,7 @@ export function UsersPage() {
             {isLoading ? (
               <div>Загрузка…</div>
             ) : (
-              <DataTable columns={userColumn} data={users} />
+              <DataTable columns={userColumn} data={paginatedUsers} />
             )}
           </div>
         </CardContent>
