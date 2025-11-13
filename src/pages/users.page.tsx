@@ -32,7 +32,6 @@ export function UsersPage() {
         <h1 className="text-3xl font-bold text-slate-900">Пользователи</h1>
         <p className="text-slate-600 mt-2">Управление пользователями системы</p>
       </div>
-
       <Card>
         <CardHeader>
           <div className="flex items-center gap-3">
